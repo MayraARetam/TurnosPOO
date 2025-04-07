@@ -27,11 +27,11 @@ export default class Paciente {
         return this.obraSocial;
     }
 
-    public setTelefono(nuevoTelefono: number) {
+    public setTelefono(nuevoTelefono: number): void {
         this.telefono = nuevoTelefono;
     }
 
-    public setObraSocial(nuevaOS: string) {
+    public setObraSocial(nuevaOS: string): void {
         this.obraSocial = nuevaOS;
     }
 }

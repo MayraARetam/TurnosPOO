@@ -18,7 +18,7 @@ export default class Turno {
         return this.horario;
     }
 
-    public setHorario(nuevoHorario: number){
+    public setHorario(nuevoHorario: number): void{
         this.horario = nuevoHorario;
     }
 
@@ -26,7 +26,7 @@ export default class Turno {
         return this.fecha;
     }
 
-    public setFecha(nuevoDia: number){
+    public setFecha(nuevoDia: number): void{
         this.fecha = nuevoDia;
     }
 
@@ -38,7 +38,7 @@ export default class Turno {
         return this.medico;
     }
 
-    public setMedico(nuevoMedico: Medico){
+    public setMedico(nuevoMedico: Medico): void{
         this.medico = nuevoMedico;
     }
 
