@@ -9,4 +9,16 @@ for (var i = 0; i < datosEspecialidad.getArregloString().length; i++) {
 }
 console.log(arregloEspecialidades);
 (0, helper_1.crearEspecialidad)(arregloEspecialidades);
+(0, helper_1.borrarEspecialidad)(arregloEspecialidades, "Cardiologo");
 console.log(arregloEspecialidades);
+//----------------------------------------------------------------------
+//MEDICOS
+var arregloMedicos = [];
+var datosMedicos = new GestordeArchivos_1.default('./txt/medicos.txt');
+for (var i = 0; i < datosMedicos.getArregloString().length; i++) {
+    (0, helper_1.cargarMedicos)(arregloMedicos, arregloEspecialidades[4], datosMedicos.getArregloString()[i]);
+}
+console.log(arregloMedicos);
+for (var i = 0; i < arregloMedicos.length; i++) {
+    console.log("El medico ".concat(arregloMedicos[i].getNombre(), " tiene la especialidad ").concat(arregloEspecialidades[i].getEspecialidad()));
+}
