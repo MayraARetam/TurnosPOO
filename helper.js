@@ -4,6 +4,7 @@ exports.cargarEspecialidades = cargarEspecialidades;
 exports.crearEspecialidad = crearEspecialidad;
 exports.borrarEspecialidad = borrarEspecialidad;
 exports.cargarMedicos = cargarMedicos;
+exports.crearMedico = crearMedico;
 var Especialidad_1 = require("./class/Especialidad");
 var Medico_1 = require("./class/Medico");
 var ReadlineSync = require("readline-sync");
@@ -31,5 +32,13 @@ function cargarMedicos(arr, especialidad, medico) {
     var matricula = Number(datos[1]);
     var nuevoMedico = new Medico_1.default(nombre, matricula, especialidad);
     arr.push(nuevoMedico);
+    return arr;
+}
+function crearMedico(arr) {
+    var nombre = ReadlineSync.question("Ingrese su nombre y apellido: ");
+    var matricula = Number(ReadlineSync.question("Ingrese su número de matrícula: "));
+    var especialidad = ReadlineSync.question("Ingrese el nombre de su especialidad: ");
+    var newMedico = new Medico_1.default(nombre, matricula, especialidad);
+    arr.push(newMedico);
     return arr;
 }

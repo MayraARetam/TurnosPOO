@@ -1,7 +1,7 @@
 import Especialidad from "./class/Especialidad";
 import Medico from "./class/Medico";
 import GestorDeArchivos from "./class/GestordeArchivos";
-import { cargarEspecialidades, crearEspecialidad, borrarEspecialidad, cargarMedicos} from "./helper";
+import { cargarEspecialidades, crearEspecialidad, borrarEspecialidad, cargarMedicos, crearMedico} from "./helper";
 
 
 let arregloEspecialidades: Array<Especialidad> = [];
@@ -36,7 +36,9 @@ console.log(arregloMedicos);
 for(let i: number= 0; i < arregloMedicos.length; i ++){
     console.log(`El medico ${arregloMedicos[i].getNombre()} tiene la especialidad ${arregloEspecialidades[i].getEspecialidad()}`)
 }
+crearMedico(arregloMedicos);
 
+console.log(arregloMedicos);
 
 
 

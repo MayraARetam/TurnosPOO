@@ -37,3 +37,16 @@ export function cargarMedicos(arr:Array<Medico>,especialidad:Especialidad,medico
 
     return arr;
 }
+
+export function crearMedico(arr: Array<Medico>) {
+    let nombre : string = ReadlineSync.question("Ingrese su nombre y apellido: ");
+    let matricula : number = Number(ReadlineSync.question("Ingrese su número de matrícula: "));
+    let especialidad : Especialidad = ReadlineSync.question("Ingrese el nombre de su especialidad: ");
+
+    let newMedico : Medico = new Medico (nombre, matricula, especialidad);
+
+    arr.push(newMedico);
+
+    return arr;
+
+}

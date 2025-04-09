@@ -22,3 +22,5 @@ console.log(arregloMedicos);
 for (var i = 0; i < arregloMedicos.length; i++) {
     console.log("El medico ".concat(arregloMedicos[i].getNombre(), " tiene la especialidad ").concat(arregloEspecialidades[i].getEspecialidad()));
 }
+(0, helper_1.crearMedico)(arregloMedicos);
+console.log(arregloMedicos);
