@@ -5,8 +5,11 @@ exports.crearEspecialidad = crearEspecialidad;
 exports.borrarEspecialidad = borrarEspecialidad;
 exports.cargarMedicos = cargarMedicos;
 exports.crearMedico = crearMedico;
+exports.borrarMedico = borrarMedico;
+exports.cargarPaciente = cargarPaciente;
 var Especialidad_1 = require("./class/Especialidad");
 var Medico_1 = require("./class/Medico");
+var Paciente_1 = require("./class/Paciente");
 var ReadlineSync = require("readline-sync");
 function cargarEspecialidades(arr, especialidad) {
     var nuevaEspecialidad = new Especialidad_1.default(especialidad);
@@ -42,3 +45,25 @@ function crearMedico(arr) {
     arr.push(newMedico);
     return arr;
 }
+function borrarMedico(arr) {
+    var nroMatricula = Number(ReadlineSync.question("Ingrese el nro de matricula del médico a eliminar: "));
+    for (var i = 0; i < arr.length; i++) {
+        if (nroMatricula == arr[i].getMatricula()) {
+            arr.splice(i, 1);
+        }
+    }
+}
+;
+//-------------------------------------------------------------------------------
+// FUNCIONES DE CLASE PACIENTE 
+function cargarPaciente(arr, paciente) {
+    var datos = paciente.split(",");
+    var nombre = datos[0];
+    var dni = Number(datos[1]);
+    var telefono = Number(datos[2]);
+    var obraSocial = datos[3];
+    var nuevoPaciente = new Paciente_1.default(nombre, dni, telefono, obraSocial);
+    arr.push(nuevoPaciente);
+    return arr;
+}
+;

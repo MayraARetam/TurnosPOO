@@ -1,7 +1,8 @@
 import Especialidad from "./class/Especialidad";
 import Medico from "./class/Medico";
 import GestorDeArchivos from "./class/GestordeArchivos";
-import { cargarEspecialidades, crearEspecialidad, borrarEspecialidad, cargarMedicos, crearMedico} from "./helper";
+import { cargarEspecialidades, crearEspecialidad, borrarEspecialidad, cargarMedicos, crearMedico, borrarMedico, cargarPaciente} from "./helper";
+import Paciente from "./class/Paciente";
 
 
 let arregloEspecialidades: Array<Especialidad> = [];
@@ -13,13 +14,13 @@ for(let i: number = 0; i<datosEspecialidad.getArregloString().length; i++){
     cargarEspecialidades(arregloEspecialidades, datosEspecialidad.getArregloString()[i]);
 }
 
-console.log(arregloEspecialidades);
+//console.log(arregloEspecialidades);
 
-crearEspecialidad(arregloEspecialidades);
+//crearEspecialidad(arregloEspecialidades);
 
-borrarEspecialidad(arregloEspecialidades, "Cardiologo");
+//borrarEspecialidad(arregloEspecialidades, "Cardiologo");
 
-console.log(arregloEspecialidades);
+//console.log(arregloEspecialidades);
 
 //----------------------------------------------------------------------
 //MEDICOS
@@ -36,9 +37,28 @@ console.log(arregloMedicos);
 for(let i: number= 0; i < arregloMedicos.length; i ++){
     console.log(`El medico ${arregloMedicos[i].getNombre()} tiene la especialidad ${arregloEspecialidades[i].getEspecialidad()}`)
 }
-crearMedico(arregloMedicos);
+//crearMedico(arregloMedicos);
 
-console.log(arregloMedicos);
+//console.log(arregloMedicos);
+
+//borrarMedico(arregloMedicos);
+
+//console.log(arregloMedicos);
+
+//------------------------------------------------------------------
+// PACIENTES
+
+let arregloPacientes : Array<Paciente> = [];
+
+let datosPacientes : GestorDeArchivos = new GestorDeArchivos('./txt/paciente.txt');
+
+for(let i : number = 0; i < datosPacientes.getArregloString().length; i++){
+    cargarPaciente(arregloPacientes,datosPacientes.getArregloString()[i]);
+}
+
+console.log(arregloPacientes);
+
+
 
 
 

@@ -1,5 +1,6 @@
 import Especialidad from "./class/Especialidad";
 import Medico from "./class/Medico";
+import Paciente from "./class/Paciente";
 import * as ReadlineSync from 'readline-sync';
 
 export function cargarEspecialidades(arr:Array<Especialidad>, especialidad: string): Array<Especialidad>{
@@ -50,3 +51,31 @@ export function crearMedico(arr: Array<Medico>) {
     return arr;
 
 }
+
+
+export function borrarMedico(arr:Array<Medico>){
+    let nroMatricula : number = Number(ReadlineSync.question("Ingrese el nro de matricula del médico a eliminar: "))
+    for (let i: number = 0; i < arr.length; i++){
+        if(nroMatricula == arr[i].getMatricula()){
+            arr.splice(i, 1);
+        }
+    }
+
+};
+
+//-------------------------------------------------------------------------------
+// FUNCIONES DE CLASE PACIENTE 
+
+export function cargarPaciente(arr: Array<Paciente>, paciente: string): Array<Paciente> {
+    let datos : string []= paciente.split(",");
+    let nombre : string = datos[0];
+    let dni : number = Number(datos[1]);
+    let telefono : number = Number(datos[2]);
+    let obraSocial : string = datos[3];
+
+    let nuevoPaciente : Paciente = new Paciente(nombre, dni, telefono, obraSocial);
+
+    arr.push(nuevoPaciente);
+    return arr;
+
+};
